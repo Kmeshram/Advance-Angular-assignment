@@ -3,11 +3,12 @@ import { Bulletin } from '../bulletin';
 import { CommonModule } from '@angular/common';
 import { WraptextPipe } from '../wraptext.pipe';
 import { FormatDatePipe } from '../format-date.pipe';
+import { OnhovertextcolorDirective } from '../onhovertextcolor.directive';
 
 @Component({
   selector: 'app-change-detect',
   standalone: true,
-  imports: [CommonModule, WraptextPipe,FormatDatePipe],
+  imports: [CommonModule, WraptextPipe,FormatDatePipe, OnhovertextcolorDirective],
   templateUrl: './change-detect.component.html',
   styleUrl: './change-detect.component.scss',
   changeDetection:ChangeDetectionStrategy.OnPush

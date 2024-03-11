@@ -8,12 +8,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 
 export class FormatDatePipe implements PipeTransform {
-  transform(value: any, ): string {
-    var datePipe = new DatePipe("en-US");
-    value = datePipe.transform(value, 'dd MMM yyyy hh:mm');
-    return value;
+ 
+  transform(date: Date | string, day: number, format: string = 'dd MMM yyyy'): any {
+    date = new Date();  // if orginal type was a string
+    date.setDate(date.getDate()-day);
+    return new DatePipe('en-US').transform(date, format);
   }
-
 }
 
 
