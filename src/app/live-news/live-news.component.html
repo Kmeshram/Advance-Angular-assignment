@@ -1,0 +1,6 @@
+<div *ngFor="let item of bulletinList, let i=index">
+    <div *ngIf="i===currentIndex">
+        <p> {{item.news_title}}</p>
+        <p> {{item.news_date}}</p>
+      </div>
+</div>
