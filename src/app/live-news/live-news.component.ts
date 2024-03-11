@@ -1,11 +1,12 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BulletinService } from '../bulletin.service';
 import { CommonModule } from '@angular/common';
+import { FormatDatePipe } from '../format-date.pipe';
 
 @Component({
   selector: 'app-live-news',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormatDatePipe ],
   templateUrl: './live-news.component.html',
   styleUrl: './live-news.component.scss'
 })
