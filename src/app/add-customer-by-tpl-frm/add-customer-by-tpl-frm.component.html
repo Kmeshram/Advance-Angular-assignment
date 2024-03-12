@@ -1,0 +1,151 @@
+<div class="toaster-success" id="successtoasterid" *ngIf="showToaster">
+    <button type="button" class="btn-close" aria-hidden="true"></button>
+    <div class="toast-head">
+        <i class="bx bx-check-double font-size-20 align-middle me-2"></i> Success
+    </div>
+    <div class="toast-msg">
+        Successfully Saved
+    </div>
+</div>
+
+<div class="toaster-failed" *ngIf="showToasterinvalid">
+    <button type="button" class="btn-close" aria-hidden="true"></button>
+    <div class="toast-head-f">
+        <i class="bx bx-check-double font-size-20 align-middle me-2"></i> Failed
+    </div>
+    <div class="toast-msg-f">
+        Invalid form Field
+    </div>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Task Five Template Driven Form With Validation
+        </div>
+        <div class="card-body">
+            <form novalidate #customerForm="ngForm" (ngSubmit)="insertCustomer()"
+                autocomplete="off">
+                <div class="row">
+                    <div class="col">
+
+                        <div class="form-group">
+                            <label>First Name<span class="text-danger">*</span></label>
+
+                            <input placeholder="First Name" class="form-control" type="text" name="firstName"
+                                [(ngModel)]="insertUserReq.firstName" required #firstnameCtrl="ngModel"
+                                (keypress)="vs.lettersValidate($event)"
+                                [ngClass]="{ 'is-invalid': customerForm.submitted && firstnameCtrl.errors }">
+                            <div *ngIf="(firstnameCtrl.touched || customerForm.submitted) && firstnameCtrl.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="firstnameCtrl.errors['required']">First Name is required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <div class="form-group">
+                            <label>Last Name<span class="text-danger">*</span></label>
+
+                            <input placeholder="Last Name" class="form-control" type="text" name="lastName"
+                                [(ngModel)]="insertUserReq.lastName" required #lastnameCtrl="ngModel"
+                                [ngClass]="{ 'is-invalid': customerForm.submitted && lastnameCtrl.errors }"
+                                pattern="^[a-zA-Z]+$">
+                            <div *ngIf="(lastnameCtrl.touched || customerForm.submitted)&& lastnameCtrl.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="lastnameCtrl.errors['required']">Last Name is required</div>
+                                <div *ngIf="lastnameCtrl.errors['pattern']">Only characters are allowed</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="form-group">
+                            <label>Email<span class="text-danger">*</span></label>
+
+                            <input placeholder="Email" class="form-control" type="email" name="email"
+                                [(ngModel)]="insertUserReq.email" required #emailCtrl="ngModel"
+                                [ngClass]="{ 'is-invalid': customerForm.submitted && emailCtrl.errors }"
+                                pattern="^[_a-zA-Z0-9-]+(.[_a-zA-Z0-9-]+)@[a-zA-Z0-9-]+(.[a-zA-Z0-9-]+).(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$">
+                            <div *ngIf="(emailCtrl.touched || customerForm.submitted) && emailCtrl.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="emailCtrl.errors['required']">Email is required</div>
+                                <div *ngIf="emailCtrl.errors['pattern']">Email is invalid</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+
+                        <div class="form-group">
+                            <label>DOB<span class="text-danger">*</span></label>
+
+                            <input placeholder="Select Dob" class="form-control" type="date" name="dob"
+                                [(ngModel)]="insertUserReq.dob" required #dobCtrl="ngModel" max="2006-04-01"
+                                [ngClass]="{ 'is-invalid': customerForm.submitted && dobCtrl.errors }">
+                            <div *ngIf="(dobCtrl.touched || customerForm.submitted)&& dobCtrl.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="dobCtrl.errors['required']">Dob is required</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="form-group">
+                            <label>Mobile Number<span class="text-danger">*</span></label>
+
+                            <input placeholder="Mobile Number" class="form-control" type="text" name="mobileNo"
+                                [(ngModel)]="insertUserReq.mobileNo" required #mobilenoCtrl="ngModel"
+                                (keypress)="vs.ValidateNumber($event)" minlength="10" maxlength="14"
+                                [ngClass]="{ 'is-invalid': customerForm.submitted && mobilenoCtrl.errors }">
+                            <div *ngIf="(mobilenoCtrl.touched || customerForm.submitted)&& mobilenoCtrl.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="mobilenoCtrl.errors['required']">Mobile Number is required</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="form-group">
+                            <label>Address</label>
+
+                            <textarea placeholder="Address" class="form-control" type="text" name="address"
+                                [(ngModel)]="insertUserReq.address" #addressCtrl="ngModel"></textarea>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-4 col-lg-4">
+
+                        <div class="form-group">
+                            <label>Pin Code<span class="text-danger">*</span></label>
+
+                            <input placeholder="Pincode" class="form-control" type="text" name="pincode"
+                                [(ngModel)]="insertUserReq.pinCode" (keypress)="vs.ValidateNumber($event)" minlength="6"
+                                maxlength="6" required #pincodeCtrl="ngModel"
+                                [ngClass]="{ 'is-invalid': customerForm.submitted && pincodeCtrl.errors }">
+                            <div *ngIf="(pincodeCtrl.touched || customerForm.submitted) && pincodeCtrl.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="pincodeCtrl.errors['required']">Pin Code is required</div>
+                                <div *ngIf="pincodeCtrl.errors['minlength']">Pin Code Should be 6 digit</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <button class="btn btn-lg btn-success mx-2" type="submit">Submit</button>
+                        <button class="btn btn-lg btn-secondary" type="reset">Reset</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

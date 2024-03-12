@@ -1,6 +1,19 @@
-<h2>Bulletin News iltle:<span  appOnhovertextcolor>{{bulletin.news_title | wraptext:20}}</span></h2>
-<h4>Bulletin News Date:<span>{{bulletin.news_date | formatDate: 28: 'dd MMM yyyy'}}</span></h4>
-<h4>Bulletin News Time:<span>{{bulletin.news_date | formatDate: 28: 'hh:ss'}}</span></h4>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Task 1, 3, 4
+        </div>
+        <div class="card-body">
+            <h4>Change Detection, wraptextpipe, FormatdatePipe </h4>
 
-<button style="margin: 0px 10px;" (click)="changeDetectionOnPush()">Change Detect OnPush</button>
-<button (click)="changeDetectionDefault()">Change Detect Defualt</button>
+            <h2>Bulletin News iltle:<span appOnhovertextcolor>{{bulletin.news_title}}</span></h2>
+            <h2>Bulletin News iltle:<span appOnhovertextcolor>{{bulletin.news_title | wraptext:20}}</span></h2>
+
+            <h4>Bulletin News Date:<span>{{bulletin.news_date | formatDate: 28: 'dd MMM yyyy'}}</span></h4>
+            <h4>Bulletin News Time:<span>{{bulletin.news_date | formatDate: 28: 'hh:ss'}}</span></h4>
+
+            <button style="margin: 0px 10px;" (click)="changeDetectionOnPush()">Change Detect OnPush</button>
+            <button (click)="changeDetectionDefault()">Change Detect Defualt</button>
+        </div>
+    </div>
+</div>
