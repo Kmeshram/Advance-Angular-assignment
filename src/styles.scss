@@ -2,3 +2,110 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.form-group label{
+    margin-bottom: 5px;
+}
+
+
+.toaster-success {
+    position: fixed;
+    top: 13%;
+    width: 21%;
+    right: 2%;
+    border: 2px solid green;
+    border-radius: 3px;
+    padding: 10px;
+    z-index: 1111;
+  background-color: #77ff77a6;
+  
+   
+  
+  }
+  
+  .toaster-failed {
+    position: fixed;
+    top: 13%;
+    width: 21%;
+    right: 2%;
+    border: 2px solid #800000f5;
+    color: #690101f5;
+    border-radius: 3px;
+    padding: 10px;
+    z-index: 1111;
+    background-color: #ff7777a6;
+  
+  }
+  
+  .toaster-success button {
+    position: absolute;
+    right: 4px;
+    top: 6px;
+    font-size: 8px;
+    color: green;
+  }
+  
+  .toaster-failed button {
+    position: absolute;
+    right: 4px;
+    top: 6px;
+    font-size: 8px;
+    color: rgb(111, 3, 3);
+  }
+  
+  .toast-head {
+    color: #04621a;
+    font-weight: bold;
+    font-size: 16px;
+  
+  }
+  
+  .toast-head-f {
+    color: #690101f5;
+    font-weight: bold;
+    font-size: 16px;
+  
+  }
+  
+  
+  @keyframes toaster-success {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @-webkit-keyframes toaster-success {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  
+  @keyframes toaster-failed {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @-webkit-keyframes toaster-failed {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
