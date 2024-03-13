@@ -1,0 +1,42 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <h1 class="example-app-name">Adavnce Angular Assignemnet</h1>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav [(opened)]="opened" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+            [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+            <mat-nav-list>
+                <a mat-list-item routerLink="/changedetection"> <button mat-raised-button>Task 1 Change Detection
+                    </button></a>
+                <a mat-list-item routerLink="/livenews"><button mat-raised-button>Task 2 Dynamic Component</button></a>
+                <a mat-list-item routerLink="/changedetection"><button mat-raised-button>3 Custom Pipe</button> </a>
+                <a mat-list-item routerLink="/changedetection"><button mat-raised-button>4 Custom attribute
+                        directives</button> </a>
+                <a mat-list-item routerLink="/templateform"><button mat-raised-button>Task 5 Template Driven
+                        Form</button></a>
+                <a mat-list-item routerLink="/reactiveform"><button mat-raised-button>Task 6 Rective Form</button></a>
+                <a mat-list-item routerLink="/calculator"><button mat-raised-button>Task 12 Calculator</button></a>
+
+                <a mat-list-item><button mat-raised-button [matMenuTriggerFor]="materialcomponent">Task 13 Angular
+                        Material basic</button></a>
+
+                <mat-menu #materialcomponent="matMenu" xPosition="after">
+                    <a mat-list-item routerLink="/stepper"><button mat-raised-button>a. Stepper</button></a>
+                    <a mat-list-item routerLink="/datepicker"><button mat-raised-button>b.DatePicker</button></a>
+                    <a mat-list-item routerLink="/dailog"><button mat-raised-button>c. Dailog</button></a>
+                    <a mat-list-item routerLink="/sortingheader"><button mat-raised-button>d. Sorting
+                            Header</button></a>
+                    <a mat-list-item routerLink="/chips"><button mat-raised-button>e. Chips</button></a>
+                    <a mat-list-item routerLink="/sidenav"><button mat-raised-button>f. Sidenav</button></a>
+                </mat-menu>
+
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
