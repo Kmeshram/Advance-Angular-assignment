@@ -10,6 +10,11 @@ import { AngularmaterialdatepickerComponent } from './angularmaterialdatepicker/
 import { AngularMaterialDialogComponent } from './angular-material-dialog/angular-material-dialog.component';
 import { AngularMaterialSidenavComponent } from './angular-material-sidenav/angular-material-sidenav.component';
 import { SortingtableheaderComponent } from './sortingtableheader/sortingtableheader.component';
+import { AngularmaterialtableComponent } from './angularmaterialtable/angularmaterialtable.component';
+import { AngularautocompleteComponent } from './angularautocomplete/angularautocomplete.component';
+import { ExpandedtableComponent } from './expandedtable/expandedtable.component';
+import { DynamictableComponent } from './dynamictable/dynamictable.component';
+import { MydemocomComponent } from './mydemocom/mydemocom.component';
 
 export const routes: Routes = [
     {path:'', component:AngularMaterialSidenavComponent, title:''},
@@ -18,7 +23,8 @@ export const routes: Routes = [
     {path:'livenews', component:LiveNewsComponent, title:'livenews'},
     {path:'templateform', component:AddCustomerByTplFrmComponent, title:'templateform'},
     {path:'reactiveform', component:AddCustomerByRctFrmComponent, title:'reactiveform'},
-    {path:'calculator', component:AngularCalculatorComponent, title:'calculator'},
+    {path:'miscellaneous', component:MydemocomComponent, title:'Miscellaneous'},
+  {path:'calculator', component:AngularCalculatorComponent, title:'calculator'},
     {path:'stepper', component:AngularMaterialStepperComponent, title:'angularmaterialstepper'},
     {path:'chips', component:AngularMaterialChipsComponent, title:'angularmaterialchips'},
     {path:'dailog', component:AngularMaterialDialogComponent, title:'angularmaterialdialog'},
@@ -26,6 +32,11 @@ export const routes: Routes = [
     {path:'datepicker', component:AngularmaterialdatepickerComponent, title:'angularmaterialdatepicker'},
     {path:'sortingheader', component:SortingtableheaderComponent, title:'sortingtableheader'},
 
+    {path:'basictable', component:AngularmaterialtableComponent, title:'Basictable'},
+    {path:'dynamictable', component:DynamictableComponent, title:'Dynamictable'},
+    {path:'expandedtable', component:ExpandedtableComponent, title:'Expandedtable'},
+
+    {path:'autocomplete', component:AngularautocompleteComponent, title:'autocomplete'},
 
 
 

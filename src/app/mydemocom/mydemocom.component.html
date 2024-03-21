@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Alters
+        </div>
+        <div class="card-body">
+            
+            <div class="container mt-3">
+                <button class="btn btn-sm btn-primary" (click)="showAlert()">Alerts</button>
+                <div class="alert alert-success" *ngIf="isAlertVisible">
+                    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                </div>
+      
+                
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Toast
+        </div>
+        <div class="card-body">
+            
+            <div class="container mt-3">
+                <button class="btn btn-sm btn-primary" (click)="showToaster()">Toast</button>
+                ﻿<div
+                *ngIf="showsToast"  [@toastTrigger]="(toast.showsToast$ | async) ? 'open' : 'close'" 
+                [class]="toast.toastState$ | async"
+              > 
+                <div style="max-width: 160px;">    
+                    {{ toast.toastMessage$ | async }}  
+                </div>  
+              
+                <a
+                  class="close-btn" 
+                  (click)="showsToast = !showsToast">    
+                    <small>      
+                      Dismiss    
+                    </small>  
+                </a>
+              </div>
+                
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            Loader
+        </div>
+        <div class="card-body">
+            
+          
+    
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

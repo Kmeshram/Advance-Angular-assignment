@@ -17,8 +17,9 @@
                 <a mat-list-item routerLink="/templateform"><button mat-raised-button>Task 5 Template Driven
                         Form</button></a>
                 <a mat-list-item routerLink="/reactiveform"><button mat-raised-button>Task 6 Rective Form</button></a>
+                <a mat-list-item routerLink="/miscellaneous"><button mat-raised-button>Task 11 Miscellaneous</button></a>
                 <a mat-list-item routerLink="/calculator"><button mat-raised-button>Task 12 Calculator</button></a>
-
+                
                 <a mat-list-item><button mat-raised-button [matMenuTriggerFor]="materialcomponent">Task 13 Angular
                         Material basic</button></a>
 
@@ -31,7 +32,17 @@
                     <a mat-list-item routerLink="/chips"><button mat-raised-button>e. Chips</button></a>
                     <a mat-list-item routerLink="/sidenav"><button mat-raised-button>f. Sidenav</button></a>
                 </mat-menu>
+                <a mat-list-item><button mat-raised-button [matMenuTriggerFor]="materialtablecomponent">Task 14 Angular
+                        Material table</button></a>
+                <mat-menu #materialtablecomponent="matMenu" xPosition="after">
+                    <a mat-list-item routerLink="/basictable"><button mat-raised-button>a. Basic table</button></a>
+                    <a mat-list-item routerLink="/dynamictable"><button mat-raised-button>b. Dynamic table</button></a>
+                    <a mat-list-item routerLink="/expandedtable"><button mat-raised-button>c. Expanded Table with
+                            Filter</button></a>
 
+                </mat-menu>
+                <a mat-list-item routerLink="/autocomplete"><button mat-raised-button>Task 15
+                        Autocomplete</button></a>
             </mat-nav-list>
         </mat-sidenav>
 
