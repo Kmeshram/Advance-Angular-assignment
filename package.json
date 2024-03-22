@@ -4,7 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:uta": "ng serve --configuration=uta",
     "build": "ng build",
+    "build:uta": "ng build --configuration=uta",
+    "build:development": "ng build --configuration=development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -21,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^17.2.0",
     "@angular/router": "^17.2.0",
     "bootstrap": "^5.3.3",
+    "http-server": "^14.1.1",
     "jquery": "^3.7.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

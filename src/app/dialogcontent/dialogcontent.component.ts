@@ -1,9 +1,12 @@
 import { Component, Inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import {
   MatDialog,
   MAT_DIALOG_DATA,
   MatDialogTitle,
   MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
 } from '@angular/material/dialog';
 export interface DialogData {
   animal: 'panda' | 'unicorn' | 'lion';
@@ -11,7 +14,7 @@ export interface DialogData {
 @Component({
   selector: 'app-dialogcontent',
   standalone: true,
-  imports: [MatDialogTitle, MatDialogContent],
+  imports: [MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent],
   templateUrl: './dialogcontent.component.html',
   styleUrl: './dialogcontent.component.scss'
 })

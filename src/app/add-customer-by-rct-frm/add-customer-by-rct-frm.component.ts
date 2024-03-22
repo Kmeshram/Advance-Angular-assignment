@@ -26,6 +26,7 @@ export class AddCustomerByRctFrmComponent {
   showToaster: boolean = false;
   showToasterinvalid: boolean = false
   submitted = false;
+  emailRegEx = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
 
   constructor(public vs: ValidationService, private formBuilder: FormBuilder) {
 
@@ -35,7 +36,7 @@ export class AddCustomerByRctFrmComponent {
       {
         firstName: [this.insertUserReq.firstName, [Validators.required, Validators.minLength(3), Validators.maxLength(120)]],
         lastName: [this.insertUserReq.lastName, [Validators.required, Validators.minLength(2), Validators.maxLength(120)]],
-        email: [this.insertUserReq.email, [Validators.required, Validators.email]],
+        email: [this.insertUserReq.email, [Validators.required, Validators.email, Validators.pattern(this.emailRegEx)]],
         address: [this.insertUserReq.address],
         dob: [this.insertUserReq.dob, Validators.required],
         mobileNo: [this.insertUserReq.mobileNo, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],

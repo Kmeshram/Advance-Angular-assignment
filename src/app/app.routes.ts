@@ -15,28 +15,37 @@ import { AngularautocompleteComponent } from './angularautocomplete/angularautoc
 import { ExpandedtableComponent } from './expandedtable/expandedtable.component';
 import { DynamictableComponent } from './dynamictable/dynamictable.component';
 import { MydemocomComponent } from './mydemocom/mydemocom.component';
+import { HttppostComponent } from './httppost/httppost.component';
+import { HttpgetComponent } from './httpget/httpget.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { EditdetailComponent } from './editdetail/editdetail.component';
 
 export const routes: Routes = [
-    {path:'', component:AngularMaterialSidenavComponent, title:''},
+  { path: '', component: AngularMaterialSidenavComponent, title: '' },
 
-    {path:'changedetection', component:ChangeDetectComponent, title:'Changedetection'},
-    {path:'livenews', component:LiveNewsComponent, title:'livenews'},
-    {path:'templateform', component:AddCustomerByTplFrmComponent, title:'templateform'},
-    {path:'reactiveform', component:AddCustomerByRctFrmComponent, title:'reactiveform'},
-    {path:'miscellaneous', component:MydemocomComponent, title:'Miscellaneous'},
-  {path:'calculator', component:AngularCalculatorComponent, title:'calculator'},
-    {path:'stepper', component:AngularMaterialStepperComponent, title:'angularmaterialstepper'},
-    {path:'chips', component:AngularMaterialChipsComponent, title:'angularmaterialchips'},
-    {path:'dailog', component:AngularMaterialDialogComponent, title:'angularmaterialdialog'},
-    {path:'sidenav', component:AngularMaterialSidenavComponent, title:'angularmaterialsidnav'},
-    {path:'datepicker', component:AngularmaterialdatepickerComponent, title:'angularmaterialdatepicker'},
-    {path:'sortingheader', component:SortingtableheaderComponent, title:'sortingtableheader'},
+  { path: 'changedetection', component: ChangeDetectComponent, title: 'Changedetection' },
+  { path: 'livenews', component: LiveNewsComponent, title: 'livenews' },
+  { path: 'templateform', component: AddCustomerByTplFrmComponent, title: 'templateform' },
+  { path: 'reactiveform', component: AddCustomerByRctFrmComponent, title: 'reactiveform' },
+  { path: 'httppost', component: HttppostComponent, title: 'htttppostapicall' },
+  { path: 'httpget', component: HttpgetComponent, title: 'htttpgetapicall' },
+  { path: 'userdetail/:id', component: UserDetailComponent, title: 'Userdetail' },
+  { path: 'editdetail/:id', component: EditdetailComponent, title: 'Editdetail' },
 
-    {path:'basictable', component:AngularmaterialtableComponent, title:'Basictable'},
-    {path:'dynamictable', component:DynamictableComponent, title:'Dynamictable'},
-    {path:'expandedtable', component:ExpandedtableComponent, title:'Expandedtable'},
+  { path: 'miscellaneous', component: MydemocomComponent, title: 'Miscellaneous' },
+  { path: 'calculator', component: AngularCalculatorComponent, title: 'calculator' },
+  { path: 'stepper', component: AngularMaterialStepperComponent, title: 'angularmaterialstepper' },
+  { path: 'chips', component: AngularMaterialChipsComponent, title: 'angularmaterialchips' },
+  { path: 'dailog', component: AngularMaterialDialogComponent, title: 'angularmaterialdialog' },
+  { path: 'sidenav', component: AngularMaterialSidenavComponent, title: 'angularmaterialsidnav' },
+  { path: 'datepicker', component: AngularmaterialdatepickerComponent, title: 'angularmaterialdatepicker' },
+  { path: 'sortingheader', component: SortingtableheaderComponent, title: 'sortingtableheader' },
 
-    {path:'autocomplete', component:AngularautocompleteComponent, title:'autocomplete'},
+  { path: 'basictable', component: AngularmaterialtableComponent, title: 'Basictable' },
+  { path: 'dynamictable', component: DynamictableComponent, title: 'Dynamictable' },
+  { path: 'expandedtable', component: ExpandedtableComponent, title: 'Expandedtable' },
+
+  { path: 'autocomplete', component: AngularautocompleteComponent, title: 'autocomplete' },
 
 
 

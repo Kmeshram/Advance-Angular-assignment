@@ -10,6 +10,7 @@ import { AngularmaterialdatepickerComponent } from './angularmaterialdatepicker/
 import { AngularMaterialChipsComponent } from './angular-material-chips/angular-material-chips.component';
 import { AngularMaterialDialogComponent } from './angular-material-dialog/angular-material-dialog.component';
 import { AngularMaterialSidenavComponent } from './angular-material-sidenav/angular-material-sidenav.component';
+import { environment } from '../environments/environment.uat';
 
 @Component({
   selector: 'app-root',
@@ -22,4 +23,5 @@ import { AngularMaterialSidenavComponent } from './angular-material-sidenav/angu
 })
 export class AppComponent {
   title = 'angularassignment';
+  baseUrl=environment.baseUrl
 }

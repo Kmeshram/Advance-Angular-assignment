@@ -72,8 +72,8 @@
                         <div class="form-group">
                             <label>Email<span class="text-danger">*</span></label>
                             <input type="email" id="email" name="email" formControlName="email"
-                                placeholder="your-name@provider.com" required minlength="1" maxlength="250"
-                                class="form-control"
+                                placeholder="your-name@provider.com" required minlength="1" maxlength="100"
+                                class="form-control" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                 [ngClass]="{ 'is-invalid': submitted && formValue['email'].errors }"  >
                             <div *ngIf="submitted && formValue['email'].errors" class="invalid-feedback">
                                 <div *ngIf="formValue['email'].errors['required']">
@@ -85,7 +85,9 @@
                                 <div *ngIf="formValue['email'].errors['maxlength']">
                                     This field must have at most 250 characters.
                                 </div>
-                             
+                                <div *ngIf="formValue['email'].errors['pattern']">
+                                    Email Is Invalid
+                                </div>
                             </div>
                         </div>
                     </div>

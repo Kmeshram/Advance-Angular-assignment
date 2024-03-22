@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Task 7.Http Client POST API, Observable, localStorage
+        </div>
+        <div class="card-body">
+            <form [formGroup]="registrationForm" autocomplete="off" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" name="email" formControlName="email"
+                    placeholder="your-name@provider.com" required minlength="1" maxlength="250"
+                    class="form-control" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    [ngClass]="{ 'is-invalid': submitted && formValue['email'].errors }"  >
+                    <div *ngIf="submitted && formValue['email'].errors" class="invalid-feedback">
+                        <div *ngIf="formValue['email'].errors['required']" >
+                            This field is required.
+                        </div>
+                        <div *ngIf="formValue['email'].errors['minlength']">
+                            This field must have at least 1 character.
+                        </div>
+                        <div *ngIf="formValue['email'].errors['maxlength']">
+                            This field must have at most 250 characters.
+                        </div>
+                        <div *ngIf="formValue['email'].errors['pattern']">
+                            Email Is Invalid
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" placeholder="password" type="password" formControlName="password" required minlength="6" maxlength="8"
+                    [ngClass]="{ 'is-invalid': submitted && formValue['password'].errors }"  >
+                    <div *ngIf="submitted && formValue['password'].errors" class="invalid-feedback">
+                        <div *ngIf="formValue['password'].errors['required']">
+                            This field is required.
+                        </div>
+                        <div *ngIf="formValue['password'].errors['minlength']">
+                            This field must have at least 6 character.
+                        </div>
+                        <div *ngIf="formValue['password'].errors['maxlength']">
+                            This field must have at most 8 characters.
+                        </div>
+                     
+                    </div>
+                </div>
+
+                <div class="mt-2">
+                    <button  class="btn btn-sm btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
