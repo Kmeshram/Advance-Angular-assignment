@@ -14,12 +14,11 @@ declare var $: any
 export class AddCustomerByTplFrmComponent {
   insertUserReq = new InsertUser();
   showToaster: boolean = false;
-  showToasterinvalid:boolean=false
+  showToasterinvalid: boolean = false
   @ViewChild('customerForm', { static: true }) customerForm!: NgForm;
   constructor(public vs: ValidationService) {
-
   }
-  ngOnInIt() {
+  ngOnInit() {
 
   }
   insertCustomer() {
@@ -39,12 +38,34 @@ export class AddCustomerByTplFrmComponent {
         this.customerForm.resetForm()
       }, 3000);
     }
-   else{
-    this.showToasterinvalid=true
-setTimeout(() => {
-  this.showToasterinvalid=false
+    else {
+      this.showToasterinvalid = true
+      setTimeout(() => {
+        this.showToasterinvalid = false
 
-}, 3000);
-   }
+      }, 3000);
+    }
+    if (this.customerForm.valid) {
+      this.showToaster = true
+
+      localStorage.setItem('firstname', this.insertUserReq.firstName)
+      localStorage.setItem('lastname', this.insertUserReq.lastName)
+      localStorage.setItem('email', this.insertUserReq.email)
+      localStorage.setItem('dob', this.insertUserReq.dob)
+      localStorage.setItem('address', this.insertUserReq.address)
+      localStorage.setItem('mobileno', this.insertUserReq.mobileNo)
+      localStorage.setItem('pincode', this.insertUserReq.pinCode)
+      setTimeout(() => {
+        this.showToaster = false
+
+      }, 2000);
+    }
+    else {
+      this.showToasterinvalid = true
+
+      setTimeout(() => {
+        this.showToasterinvalid = false
+      }, 3000);
+    }
   }
 }

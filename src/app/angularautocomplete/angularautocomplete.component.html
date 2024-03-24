@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Task 15 A. simple Autocomplete
+    </div>
+    <div class="card-body">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Number</mat-label>
+          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="simpleControl"
+            [matAutocomplete]="autoa">
+          <mat-autocomplete #autoa="matAutocomplete">
+            @for (option of simpleoptions; track simpleoptions) {
+            <mat-option [value]="option">{{option}}</mat-option>
+            }
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-header">
+      Task 15 b. First Heighlighted Option
+    </div>
+    <div class="card-body">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Number</mat-label>
+          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="heighlightedControl"
+            [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            @for (highlightedoptions of filteredOptions | async; track highlightedoptions) {
+            <mat-option [value]="highlightedoptions">{{highlightedoptions}}</mat-option>
+            }
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+
+    </div>
+  </div>
+
+
+
+  <div class="card">
+    <div class="card-header">
+      Task 15 c.Option group autocomplete with long list.
+    </div>
+    <div class="card-body">
+      <form [formGroup]="stateForm">
+        <mat-form-field>
+          <mat-label>States Group</mat-label>
+          <input type="text" matInput formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+          <mat-autocomplete #autoGroup="matAutocomplete">
+            @for (group of stateGroupOptions | async; track group) {
+            <mat-optgroup [label]="group.letter">
+              @for (name of group.names; track name) {
+              <mat-option [value]="name">{{name}}</mat-option>
+              }
+            </mat-optgroup>
+            }
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-header">
+      Task 15 d.Option group autocomplete with long list.
+    </div>
+    <div class="card-body">
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>State</mat-label>
+          <input matInput aria-label="State" [matAutocomplete]="stateimg" [formControl]="stateCtrl">
+          <mat-autocomplete #stateimg="matAutocomplete">
+            <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+              <img class="example-option-img" aria-hidden [src]="state.flag" height="25">
+              <span>{{state.name}}</span> |
+              <small>Population: {{state.population}}</small>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+
+    </div>
+  </div>
+
+</div>

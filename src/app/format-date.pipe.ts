@@ -8,7 +8,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 
 export class FormatDatePipe implements PipeTransform {
- 
   transform(date: Date | string, day: number, format: string = 'dd MMM yyyy'): any {
     date = new Date();  
     date.setDate(date.getDate()-day);

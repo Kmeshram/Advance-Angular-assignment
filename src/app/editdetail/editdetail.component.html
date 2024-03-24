@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Task 9.b edit Detail
+        </div>
+        <div class="card-body">
+            <h3><b>Edit user detail</b></h3>
+            <form novalidate #userForm="ngForm" (ngSubmit)="updateUser()"
+            autocomplete="off">
+            <div class="row">
+                <div class="col">
+
+                    <div class="form-group">
+                        <label>First Name<span class="text-danger">*</span></label>
+
+                        <input placeholder="First Name" class="form-control" type="text" name="firstName"
+                            [(ngModel)]="userData.first_name" required #firstnameCtrl="ngModel"
+                            (keypress)="vs.lettersValidate($event)"
+                            [ngClass]="{ 'is-invalid': userForm.submitted && firstnameCtrl.errors }">
+                        <div *ngIf="(firstnameCtrl.touched || userForm.submitted) && firstnameCtrl.errors"
+                            class="invalid-feedback">
+                            <div *ngIf="firstnameCtrl.errors['required']">First Name is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="form-group">
+                        <label>Last Name<span class="text-danger">*</span></label>
+
+                        <input placeholder="Last Name" class="form-control" type="text" name="lastName"
+                            [(ngModel)]="userData.last_name" required #lastnameCtrl="ngModel"
+                            [ngClass]="{ 'is-invalid': userForm.submitted && lastnameCtrl.errors }"
+                            pattern="^[a-zA-Z]+$">
+                        <div *ngIf="(lastnameCtrl.touched || userForm.submitted)&& lastnameCtrl.errors"
+                            class="invalid-feedback">
+                            <div *ngIf="lastnameCtrl.errors['required']">Last Name is required</div>
+                            <div *ngIf="lastnameCtrl.errors['pattern']">Only characters are allowed</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+
+                    <div class="form-group">
+                        <label>Email<span class="text-danger">*</span></label>
+
+                        <input placeholder="Email" class="form-control" type="email" name="email"
+                            [(ngModel)]="userData.email" required #emailCtrl="ngModel"
+                            [ngClass]="{ 'is-invalid': userForm.submitted && emailCtrl.errors }"
+                            pattern="^[_a-zA-Z0-9-]+(.[_a-zA-Z0-9-]+)@[a-zA-Z0-9-]+(.[a-zA-Z0-9-]+).(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$">
+                        <div *ngIf="(emailCtrl.touched || userForm.submitted) && emailCtrl.errors"
+                            class="invalid-feedback">
+                            <div *ngIf="emailCtrl.errors['required']">Email is required</div>
+                            <div *ngIf="emailCtrl.errors['pattern']">Email is invalid</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <button class="btn btn-md btn-primary my-4">Update</button>
+                </div>
+            </div>
+           
+        </form>
+        </div>
+    </div>
+</div>

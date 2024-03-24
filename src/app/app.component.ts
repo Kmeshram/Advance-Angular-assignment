@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ChangeDetectComponent } from './change-detect/change-detect.component';
 import { LiveNewsComponent } from './live-news/live-news.component';
-import { TableDemoComponent } from './table-demo/table-demo.component';
 import { CdkColumnDef } from '@angular/cdk/table';
 import { AddCustomerByTplFrmComponent } from './add-customer-by-tpl-frm/add-customer-by-tpl-frm.component';
+import { environment } from '../environments/environment.development';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +15,5 @@ import { AddCustomerByTplFrmComponent } from './add-customer-by-tpl-frm/add-cust
 })
 export class AppComponent {
   title = 'angularassignment';
+  baseUrl=environment.baseUrl
 }

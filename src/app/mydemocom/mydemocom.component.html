@@ -1,0 +1,129 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+          task 11 a.  Alters
+        </div>
+        <div class="card-body">
+
+            <div class="container mt-3">
+                <button class="btn btn-sm btn-primary" (click)="showAlert()">Alerts</button>
+                <div class="alert alert-success" *ngIf="isAlertVisible">
+                    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+          task 11.b  Toast
+        </div>
+        <div class="card-body">
+
+            <div class="container mt-3">
+                <button class="btn btn-sm btn-primary" (click)="showToaster()">Toast</button>
+                ﻿<div *ngIf="showsToast" [@toastTrigger]="(toast.showsToast$ | async) ? 'open' : 'close'"
+                    [class]="toast.toastState$ | async">
+                    <div style="max-width: 160px;">
+                        {{ toast.toastMessage$ | async }}
+                    </div>
+
+                    <a class="close-btn" (click)="showsToast = !showsToast">
+                        <small>
+                            Dismiss
+                        </small>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+         task 11 c.Loader
+        </div>
+        <div class="card-body">
+            <button class="btn btn-sm btn-primary" (click)="showLoader()">Loader</button>
+            <div class="loaderSection" *ngIf="isLoader">
+                <div class="loader">
+                    <div class="loader-item loader-item_1"></div>
+                    <div class="loader-item loader-item_2"></div>
+                    <div class="loader-item loader-item_3"></div>
+                    <div class="loader-item loader-item_4"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+          task 11 d. Confirm
+        </div>
+        <div class="card-body">
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                data-bs-target="#confirmModal">Confirm</button>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+          Task 12 e. Input Confirm
+        </div>
+        <div class="card-body">
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+            data-bs-target="#inputConfirmModal">Input Confirm</button>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade"  id="confirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Save Data</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Dailog Box
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancle</button>
+                <button type="button" class="btn btn-primary">Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade"  #inputConfirmModal id="inputConfirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Save Data</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-control">
+                    <label>Command</label>
+                    <input type="text" name="command" [(ngModel)]="commandName">
+
+                </div>
+            </div>
+            <p>Show Command:{{commandName}}</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancle</button>
+                <button type="button" class="btn btn-primary" (click)="submit()">Okay</button>
+            </div>
+        </div>
+    </div>
+</div>

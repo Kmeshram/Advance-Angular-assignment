@@ -3,12 +3,12 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
 .form-group label{
     margin-bottom: 5px;
 }
 
 
+//custome toaster
 .toaster-success {
     position: fixed;
     top: 13%;
@@ -19,9 +19,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 10px;
     z-index: 1111;
   background-color: #77ff77a6;
-  
-   
-  
   }
   
   .toaster-failed {
@@ -37,7 +34,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #ff7777a6;
   
   }
-  
   .toaster-success button {
     position: absolute;
     right: 4px;
@@ -108,4 +104,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     to {
       opacity: 0;
     }
+  }
+
+  .card-header{
+font-size: 15px;
+font-weight: bold;
+
   }

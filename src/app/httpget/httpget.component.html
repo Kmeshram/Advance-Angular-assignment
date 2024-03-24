@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Task 8.Http Client Get API, Observable and 9.Delete
+        </div>
+        <div class="card-body">
+            <div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Email</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of userData">
+                            <td>{{item['id']}}</td>
+                            <td>{{item['email']}}</td>
+                            <td>{{item['first_name']}}</td>
+                            <td>{{item['last_name']}}</td>
+                            <td>
+                                <span><button class="btn btn-sm btn-info"  routerLink="/userdetail/{{item['id']}}"><i
+                                            class="fa fa-eye"></i></button></span>
+                                <span class="mx-2"><button class="btn btn-sm btn-primary" routerLink="/editdetail/{{item['id']}}"><i
+                                            class="fa fa-pencil"></i></button></span>
+                                <span><button class="btn btn-sm btn-danger"  (click)="getData(item)"><i
+                                            class="fa fa-trash"></i></button></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
