@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/scss/bootstrap.scss';
+// @import url('https://unpkg.com/ag-grid-community@31.2.0/styles/ag-grid.css');
+// @import url('https://unpkg.com/ag-grid-community@31.2.0/styles/ag-theme-balham.css');
+@import '../node_modules/ag-grid-community/styles/ag-grid.css';
+@import '../node_modules/ag-grid-community/styles/ag-theme-balham.css';
+
+body { padding: 10px; }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

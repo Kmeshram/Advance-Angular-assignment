@@ -1,0 +1,10 @@
+{
+    "FORM": {
+        "TITLE": "ngx-translate सह हॅलो अँगुलर!",
+        "LANG": "भाषा बदला",
+        "NAME": "नाव",
+        "VALIDATION": {
+            "REQUIRED": "हे क्षेत्र आवश्यक आहे"
+        }
+    }
+}
