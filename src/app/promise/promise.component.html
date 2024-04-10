@@ -1,0 +1,34 @@
+<h4>Promise and asyn/await</h4>
+<!-- <h6>{{promiseVal | json}}</h6> -->
+
+<div class="row">
+    <div class="col-md-4">
+        <strong>Ex-1: with Promise</strong>
+        <hr>
+        <button class="btn btn-primary" (click)="fetchData1()">
+            Buy Laptop
+        </button>
+        <hr>
+        <div id="result1">{{promiseVal | json}}</div>
+    </div>
+
+    <div class="col-md-4">
+        <strong>Ex-2:with Async/Await</strong>
+        <hr>
+        <button class="btn btn-primary" (click)="fetchData2()">
+            Buy Laptop
+        </button>
+        <hr>
+        <div id="result2">{{asyncpromiseVal | json}}</div>
+    </div>
+
+    <div class="col-md-4">
+        <strong>Ex-3:with Fetch Api</strong>
+        <hr>
+        <button class="btn btn-primary" (click)="fetchData3()">
+            Buy Laptop
+        </button>
+        <hr>
+        <div id="result3">{{fechPromiseRes |json }}</div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<!-- <h4>Observable</h4> -->
+
+<div *ngIf="data">
+    {{ data | json }}
+  </div>
+<br>
+  <!-- <div *ngIf="data$ | async as data">
+    {{ data | json }}
+  </div> -->
+
+  <div *ngIf="datab$ | async as data">
+    {{ data | json }}
+  </div>

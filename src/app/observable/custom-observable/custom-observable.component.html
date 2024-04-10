@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <h5><u>Custom Observable</u></h5>
+    <br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>Ex. :01 Mannual</strong></p>
+            <br>
+            <ul class="techList" id="elContainer"
+                [ngClass]="techStatus=='completed'?'completed' : techStatus=='error'?'error':''">
+
+
+
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <p><strong>Ex. :02 Custom Insterval Observable</strong></p>
+            <br>
+            <ul class="techList" id="elContainer2"
+                [ngClass]="techStatus2=='completed'?'completed' : techStatus2=='error'?'error':''"> </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="bg-light py-2 px-3 bordered rounded">
+                <strong>Random Name :</strong>'Ram', 'Josan', 'Alexa', 'Anup', 'Shekhar , 'Sharma'
+            </p>
+            <hr>
+            <p><strong>Current Name:</strong>{{names}}</p>
+            <span class="badge"
+                [ngClass]="nameStatus=='completed'?'bg-success' : nameStatus=='error'?'bg-danger':'bg-primary'">{{nameStatus=='completed'?'Success'
+                : nameStatus=='error'?'Error':'Running'}}</span>
+
+        </div>
+    </div>
+</div>
